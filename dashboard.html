@@ -22,18 +22,16 @@
     </div>
 
     <div class="dashboard-container">
-        <header class="dashboard-header">
-            <div style="display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;">
-                <div class="dashboard-title-area">
-                    <h1>Painel Administrativo</h1>
-                    <p class="subtitle">Gestão de Vendedores Ambulantes</p>
-                </div>
-                <div style="display: flex; align-items: center;">
-                    <img src="image1.png" alt="Logo SETUR" style="max-height: 65px; width: auto; object-fit: contain; border-radius: 8px;">
-                    <img src="logoregata.png" alt="Logo Regata" style="max-height: 65px; width: auto; object-fit: contain; margin-left: 15px;">
-                </div>
+        <header class="dashboard-header" style="display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 1rem; width: 100%;">
+            <div style="display: flex; align-items: center; justify-content: flex-start;">
+                <img src="image1.png" alt="Logo SETUR" style="max-height: 65px; width: auto; object-fit: contain; border-radius: 8px;">
+                <img src="logoregata.png" alt="Logo Regata" style="max-height: 65px; width: auto; object-fit: contain; margin-left: 15px;">
             </div>
-            <div class="dashboard-actions">
+            <div class="dashboard-title-area" style="text-align: center;">
+                <h1 style="margin-bottom: 0.2rem;">Painel Administrativo</h1>
+                <p class="subtitle">Gestão de Vendedores Ambulantes</p>
+            </div>
+            <div class="dashboard-actions" style="justify-content: flex-end;">
                 <a href="index.html" class="btn btn-secondary">Voltar ao Site</a>
                 <button id="refreshBtn" class="btn btn-primary">🔄 Atualizar Lista</button>
             </div>
