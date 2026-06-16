@@ -30,7 +30,9 @@ body {
 }
 
 .logo-container img {
-    height: 80px;
+    height: 130px;
+    width: auto;
+    object-fit: contain;
 }
 
 .title {
