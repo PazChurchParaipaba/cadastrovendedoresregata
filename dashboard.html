@@ -25,13 +25,13 @@
         <header class="dashboard-header">
             <div class="dashboard-title-area" style="display: flex; align-items: center; gap: 1.5rem;">
                 <img src="image1.png" alt="Logo SETUR" style="max-height: 80px; border-radius: 8px;">
+                <img src="logoregata.png" alt="Logo Regata" style="max-height: 80px; margin-left: 20px;">
                 <div>
                     <h1>Painel Administrativo</h1>
                     <p class="subtitle">Gestão de Vendedores Ambulantes</p>
                 </div>
             </div>
             <div class="dashboard-actions">
-                <input type="text" id="searchInput" placeholder="Buscar por nome..." class="search-input">
                 <a href="index.html" class="btn btn-secondary">Voltar ao Site</a>
                 <button id="refreshBtn" class="btn btn-primary">🔄 Atualizar Lista</button>
             </div>
@@ -68,83 +68,6 @@
                 </div>
             </div>
         </main>
-    </div>
-
-    <!-- Edit Modal -->
-    <div id="editModal" class="modal-overlay" style="display: none;">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Editar Vendedor</h2>
-                <button id="closeModalBtn" class="close-btn">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="editForm">
-                    <input type="hidden" id="editId">
-                    <div class="form-grid" style="gap: 1rem;">
-                        <div class="form-group full-width">
-                            <label>Nome Completo</label>
-                            <input type="text" id="editNome" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Identidade</label>
-                            <input type="text" id="editIdentidade" required>
-                        </div>
-                        <div class="form-group">
-                            <label>CPF</label>
-                            <input type="text" id="editCpf" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Data de Nascimento</label>
-                            <input type="date" id="editDataNascimento" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Telefone</label>
-                            <input type="text" id="editTelefone" required>
-                        </div>
-                        <div class="form-group full-width">
-                            <label>Endereço</label>
-                            <input type="text" id="editEndereco" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Bairro</label>
-                            <input type="text" id="editBairro" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Cidade</label>
-                            <input type="text" id="editCidade" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Localização</label>
-                            <select id="editLocalizacao" required>
-                                <option value="Paraipaba">Paraipaba</option>
-                                <option value="Lagoinha">Lagoinha</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Número da Vaga</label>
-                            <input type="text" id="editNumeroVaga">
-                        </div>
-                        <div class="form-group">
-                            <label>Tipo de Instalação</label>
-                            <select id="editTipo" required>
-                                <option value="Barraca">Barraca</option>
-                                <option value="Carrinho">Carrinho</option>
-                                <option value="Isopor">Isopor</option>
-                                <option value="Mesas">Mesas</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Quant. de Mesas</label>
-                            <input type="number" id="editQtdMesas" min="0">
-                        </div>
-                    </div>
-                    <div class="form-actions" style="margin-top: 1.5rem; display: flex; gap: 1rem; justify-content: flex-end;">
-                        <button type="button" id="cancelEditBtn" class="btn btn-secondary">Cancelar</button>
-                        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
-                    </div>
-                </form>
-            </div>
-        </div>
     </div>
 
     <script src="dashboard.js"></script>
