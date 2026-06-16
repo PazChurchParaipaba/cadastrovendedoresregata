@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Arial&display=swap');
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+}
+
+.print-container {
+    width: 210mm;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px 40px;
+    box-sizing: border-box;
+}
+
+.header-text {
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo-container img {
+    height: 80px;
+}
+
+.title {
+    text-align: center;
+    font-size: 14pt;
+    font-weight: bold;
+    margin: 30px 0 20px 0;
+    text-decoration: underline;
+}
+
+.form-row {
+    margin-bottom: 12px;
+    line-height: 1.8;
+}
+
+.form-row .label {
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.inline-group {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.checkbox-text {
+    display: inline-block;
+    min-width: 30px;
+    text-align: center;
+}
+
+.signature-area {
+    margin-top: 40px;
+}
+
+.sig-block {
+    text-align: center;
+    display: inline-block;
+}
+
+.sig-line {
+    border-bottom: 1px solid #000;
+    width: 300px;
+    margin-bottom: 5px;
+}
+
+.date-area {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.date-line {
+    display: inline-block;
+    border-bottom: 1px solid #000;
+    text-align: center;
+}
+
+.divider {
+    border-top: 1px dashed #000;
+    margin: 40px 0;
+    position: relative;
+    text-align: left;
+}
+
+.divider::before {
+    content: "✂-";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    background: #fff;
+    padding-right: 10px;
+}
+
+.signatures-comprovante {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+
+.sig-box {
+    width: 45%;
+    text-align: center;
+}
+
+.sig-box .sig-line {
+    width: 100%;
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 1cm;
+    }
+    body {
+        background: none;
+    }
+    .print-button-container {
+        display: none;
+    }
+}
+
+.print-button-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.print-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.print-btn:hover {
+    background-color: #0056b3;
+}
+
+.underline-value {
+    display: inline-block;
+    border-bottom: 1px solid #000;
+    min-width: 150px;
+    padding: 0 5px;
+}

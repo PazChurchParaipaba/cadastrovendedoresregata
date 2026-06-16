@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir Cadastro</title>
+    <link rel="stylesheet" href="print.css">
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="print-button-container">
+        <button class="print-btn" onclick="window.print()">🖨️ Imprimir Formulário</button>
+        <button class="print-btn" style="background-color: #6c757d; margin-left: 10px;" onclick="window.close()">Fechar</button>
+    </div>
+
+    <div class="print-container" id="printContent">
+        
+        <div class="header-text">
+            PREFEITURA MUNICIPAL DE PARAIPABA<br>
+            SECRETARIA DE TURISMO E MEIO AMBIENTE<br>
+            CARNAVAL 2026
+        </div>
+
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo SETUR" onerror="this.src='image1.png'">
+        </div>
+
+        <div class="title">CADASTRO DE VENDEDORES AMBULANTES</div>
+
+        <div class="form-row">
+            <span class="label">NOME:</span> <span id="p_nome" class="underline-value" style="width: 80%;"></span>
+        </div>
+        
+        <div class="form-row">
+            <span class="label">LOCAL:</span>
+            <span class="inline-group">( <span class="checkbox-text" id="c_local_paraipaba">&nbsp;&nbsp;&nbsp;</span> ) Paraipaba</span>
+            <span class="inline-group">( <span class="checkbox-text" id="c_local_lagoinha">&nbsp;&nbsp;&nbsp;</span> ) Lagoinha</span>
+            <span style="margin-left: 30px;"><span class="label">Nº DA VAGA:</span> <span id="p_vaga" class="underline-value" style="width: 100px;"></span></span>
+        </div>
+
+        <div class="form-row">
+            <span class="label">PRODUTOS COMERCIALIZADOS:</span>
+            <span class="inline-group">( <span class="checkbox-text" id="c_prod_comidas">&nbsp;&nbsp;&nbsp;</span> ) COMIDAS</span>
+            <span class="inline-group">( <span class="checkbox-text" id="c_prod_bebidas">&nbsp;&nbsp;&nbsp;</span> ) BEBIDAS/DRINKS</span>
+            <span class="inline-group">( <span class="checkbox-text" id="c_prod_brinquedos">&nbsp;&nbsp;&nbsp;</span> ) BRINQUEDOS</span>
+            <span class="inline-group">( <span class="checkbox-text" id="c_prod_outro">&nbsp;&nbsp;&nbsp;</span> ) OUTRO</span>
+        </div>
+
+        <div class="form-row">
+            <span class="label">TIPO:</span>
+            <span class="inline-group">BARRACA ( <span class="checkbox-text" id="c_tipo_barraca">&nbsp;&nbsp;&nbsp;</span> )</span>
+            <span class="inline-group">CARRINHO ( <span class="checkbox-text" id="c_tipo_carrinho">&nbsp;&nbsp;&nbsp;</span> )</span>
+            <span class="inline-group">ISOPOR ( <span class="checkbox-text" id="c_tipo_isopor">&nbsp;&nbsp;&nbsp;</span> )</span>
+            <span class="inline-group">MESAS ( <span class="checkbox-text" id="c_tipo_mesas">&nbsp;&nbsp;&nbsp;</span> )</span>
+            <span style="margin-left: 10px;">quantas? <span id="p_mesas">________</span></span>
+        </div>
+
+        <div class="form-row">
+            <span class="label">IDENTIDADE:</span> <span id="p_identidade"></span>
+        </div>
+        <div class="form-row">
+            <span class="label">CPF:</span> <span id="p_cpf"></span>
+        </div>
+        <div class="form-row">
+            <span class="label">DATA DE NASCIMENTO:</span> <span id="p_nascimento"></span>
+        </div>
+        <div class="form-row">
+            <span class="label">ENDEREÇO:</span> <span id="p_endereco"></span>
+        </div>
+        <div class="form-row">
+            <span class="label">CIDADE:</span> <span id="p_cidade"></span>
+        </div>
+        <div class="form-row">
+            <span class="label">BAIRRO:</span> <span id="p_bairro"></span>
+        </div>
+        <div class="form-row">
+            <span class="label">TELEFONE:</span> <span id="p_telefone"></span>
+        </div>
+
+        <div class="signature-area">
+            <div class="sig-block">
+                <div class="sig-line"></div>
+                Assinatura do cadastrado
+            </div>
+        </div>
+
+        <div class="date-area">
+            Paraipaba, <span class="date-line" style="width: 50px;" id="p_dia"></span> de <span class="date-line" style="width: 150px;" id="p_mes"></span> de 2026
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="header-text">
+            PREFEITURA MUNICIPAL DE PARAIPABA<br>
+            SECRETARIA DE TURISMO E MEIO AMBIENTE<br>
+            CARNAVAL 2026
+        </div>
+
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo SETUR" onerror="this.src='image1.png'">
+        </div>
+
+        <div class="title" style="margin-top: 10px;">COMPROVANTE - CADASTRO DE VENDEDORES AMBULANTES</div>
+
+        <div class="form-row">
+            <span class="label">NOME:</span> <span id="p_nome_comp" class="underline-value" style="width: 80%;"></span>
+        </div>
+        
+        <div class="form-row">
+            <span class="label">LOCAL:</span>
+            <span class="inline-group">( <span class="checkbox-text" id="c_local_paraipaba_comp">&nbsp;&nbsp;&nbsp;</span> ) Paraipaba</span>
+            <span class="inline-group">( <span class="checkbox-text" id="c_local_lagoinha_comp">&nbsp;&nbsp;&nbsp;</span> ) Lagoinha</span>
+            <span style="margin-left: 30px;"><span class="label">Nº DA VAGA:</span> <span id="p_vaga_comp" class="underline-value" style="width: 100px;"></span></span>
+        </div>
+
+        <div class="form-row">
+            <span class="label">PRODUTOS COMERCIALIZADOS:</span>
+            <span class="inline-group">( <span class="checkbox-text" id="c_prod_comidas_comp">&nbsp;&nbsp;&nbsp;</span> ) COMIDAS</span>
+            <span class="inline-group">( <span class="checkbox-text" id="c_prod_bebidas_comp">&nbsp;&nbsp;&nbsp;</span> ) BEBIDAS/DRINKS</span>
+            <span class="inline-group">( <span class="checkbox-text" id="c_prod_brinquedos_comp">&nbsp;&nbsp;&nbsp;</span> ) BRINQUEDOS</span>
+            <span class="inline-group">( <span class="checkbox-text" id="c_prod_outro_comp">&nbsp;&nbsp;&nbsp;</span> ) OUTRO</span>
+        </div>
+
+        <div class="form-row">
+            <span class="label">TIPO:</span>
+            <span class="inline-group">BARRACA ( <span class="checkbox-text" id="c_tipo_barraca_comp">&nbsp;&nbsp;&nbsp;</span> )</span>
+            <span class="inline-group">CARRINHO ( <span class="checkbox-text" id="c_tipo_carrinho_comp">&nbsp;&nbsp;&nbsp;</span> )</span>
+            <span class="inline-group">ISOPOR ( <span class="checkbox-text" id="c_tipo_isopor_comp">&nbsp;&nbsp;&nbsp;</span> )</span>
+            <span class="inline-group">MESAS ( <span class="checkbox-text" id="c_tipo_mesas_comp">&nbsp;&nbsp;&nbsp;</span> )</span>
+            <span style="margin-left: 10px;">quantas? <span id="p_mesas_comp">________</span></span>
+        </div>
+
+        <div class="form-row" style="margin-top: 15px;">
+            <span class="label">Obs.: Não será permitida a venda de produtos em vasilhames de vidro.</span>
+        </div>
+
+        <div class="signatures-comprovante">
+            <div class="sig-box">
+                <div class="sig-line"></div>
+                Assinatura do cadastrado
+            </div>
+            <div class="sig-box">
+                <div class="sig-line"></div>
+                Resp. pela Inscrição
+            </div>
+        </div>
+
+    </div>
+
+    <script src="print.js"></script>
+</body>
+</html>
