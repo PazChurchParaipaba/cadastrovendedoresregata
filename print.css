@@ -128,9 +128,32 @@ body {
     }
     body {
         background: none;
+        font-size: 11pt;
     }
     .print-button-container {
         display: none;
+    }
+    .print-container {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .form-row {
+        margin-bottom: 12px;
+        line-height: 1.6;
+    }
+    .title {
+        margin: 20px 0 15px 0;
+        font-size: 13pt;
+    }
+    .divider {
+        margin: 40px 0;
+    }
+    .signature-area, .signatures-comprovante {
+        margin-top: 30px;
+    }
+    img {
+        max-height: 90px !important;
+        width: auto !important;
     }
 }
 
