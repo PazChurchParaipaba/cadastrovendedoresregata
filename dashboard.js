@@ -25,7 +25,7 @@ async function carregarVendedores() {
         const { data, error, count } = await supabaseClient
             .from('vendedores')
             .select('*', { count: 'exact' })
-            .order('id', { ascending: false });
+            .order('nome', { ascending: true });
 
         if (error) throw error;
 
