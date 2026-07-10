@@ -141,8 +141,8 @@ async function editar(id) {
             
             const checkboxes = document.querySelectorAll('input[name="edit_produtos"]');
             checkboxes.forEach(cb => cb.checked = false);
-            if (data.produtos) {
-                const produtosList = data.produtos.split(', ');
+            if (data.produtos_comercializados) {
+                const produtosList = Array.isArray(data.produtos_comercializados) ? data.produtos_comercializados : [];
                 checkboxes.forEach(cb => {
                     if (produtosList.includes(cb.value)) {
                         cb.checked = true;
@@ -186,22 +186,22 @@ if (editForm) {
         const id = formData.get('id');
 
         const checkboxes = document.querySelectorAll('input[name="edit_produtos"]:checked');
-        const produtos = Array.from(checkboxes).map(cb => cb.value).join(', ');
+        const produtosComercializados = Array.from(checkboxes).map(cb => cb.value);
 
         const updates = {
-            nome: formData.get('nome'),
-            cpf: formData.get('cpf'),
-            identidade: formData.get('identidade'),
-            data_nascimento: formData.get('data_nascimento'),
-            telefone: formData.get('telefone'),
-            endereco: formData.get('endereco'),
-            bairro: formData.get('bairro'),
-            cidade: formData.get('cidade'),
-            localizacao: formData.get('localizacao'),
-            numero_vaga: formData.get('numero_vaga'),
-            produtos: produtos,
-            tipo_instalacao: formData.get('tipo_instalacao'),
-            quantidade_mesas: formData.get('tipo_instalacao') === 'Mesas' ? parseInt(formData.get('quantidade_mesas')) : null,
+            nome: formData.get('nome') || null,
+            cpf: formData.get('cpf') || null,
+            identidade: formData.get('identidade') || null,
+            data_nascimento: formData.get('data_nascimento') || null,
+            telefone: formData.get('telefone') || null,
+            endereco: formData.get('endereco') || null,
+            bairro: formData.get('bairro') || null,
+            cidade: formData.get('cidade') || null,
+            localizacao: formData.get('localizacao') || null,
+            numero_vaga: formData.get('numero_vaga') || null,
+            produtos_comercializados: produtosComercializados,
+            tipo_instalacao: formData.get('tipo_instalacao') || null,
+            quantidade_mesas: formData.get('tipo_instalacao') === 'Mesas' ? (parseInt(formData.get('quantidade_mesas')) || null) : null,
         };
 
         try {
